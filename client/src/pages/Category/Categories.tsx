@@ -15,6 +15,7 @@ const Categories: React.FC = () => {
 
   const handleDelete = (_id: string) => {
     dispatch(deleteCategories(_id))
+    alert('Category deleted successfully')
   }
 
   if (loading) return <p>Loading.....</p>
