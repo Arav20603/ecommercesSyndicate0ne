@@ -37,6 +37,15 @@ export const deleteProduct = createAsyncThunk(
   }
 )
 
+export const updateProduct = createAsyncThunk(
+  'products/updataProduct', 
+  async (data: ProductProps) => {
+    const res= await axios.put(`${API_URL}/updateProduct/${data._id}`, data)
+    console.log(res.data)
+    return res.data
+  }
+)
+
 const productSlice = createSlice({
   name: "products",
   initialState,
@@ -75,6 +84,20 @@ const productSlice = createSlice({
     })
     .addCase(deleteProduct.rejected, (state, action) => {
       state.loading = true
+      state.error = action.error.message
+    })
+    builder
+    .addCase(updateProduct.pending, (state) => {
+      state.loading = true;
+    })
+    .addCase(updateProduct.fulfilled, (state, action) => {
+      state.loading = false;
+      state.items = state.items.map(item => (
+        item._id == action.payload._id ? {...item, ...action.payload} : item
+      ))
+    })
+    .addCase(updateProduct.rejected, (state, action) => {
+      state.loading = false;
       state.error = action.error.message
     })
   }

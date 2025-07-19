@@ -14,7 +14,8 @@ const UpdateCategory = () => {
     _id: '',
     name: '',
     description: '',
-    image: ''
+    image: '',
+    category: ''
   })
 
   const navigate = useNavigate()
@@ -23,6 +24,7 @@ const UpdateCategory = () => {
     const data = items.find(item => itemId === item._id)
     if (data) {
       setFormData({
+        category: data.category || '',
         _id: data._id || '',
         name: data.name || '',
         description: data.description || '',
@@ -40,7 +42,8 @@ const UpdateCategory = () => {
         _id: '',
         name: '',
         description: '',
-        image: ''
+        image: '',
+        category: ''
       })
       navigate('/')
     }

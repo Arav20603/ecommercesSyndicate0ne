@@ -2,7 +2,8 @@ import React from 'react'
 import AddCategories from '../pages/Category/AddCategories'
 import Categories from '../pages/Category/Categories'
 import Products from '../pages/Products/Products'
-import AddProduct from '../app/features/product/AddProduct'
+import AddProduct from '../pages/Products/AddProduct'
+import UpdateProduct from '../pages/Products/UpdateProduct'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       {/* <Categories /> */}
       <Products />
       {/* <AddProduct /> */}
+      {/* <UpdateProduct /> */}
     </>
   )
 }
