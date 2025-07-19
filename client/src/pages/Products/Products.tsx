@@ -29,9 +29,10 @@ const Products = () => {
 
   return (
     <div className='ml-10'>
-      <div className="flex gap-30 mb-10">
-        <h1 className='text-4xl'>Products</h1>
-        <Link to='/add-product'><p className='bg-blue-600 p-2 w-30'>Add Product</p></Link>
+      <div className="flex justify-between mx-20 my-5">
+        <h1 className="text-4xl">Products</h1>
+        <Link to='/add-product'> <h1 className="bg-blue-700 p-3 w-40 text-white rounded-2xl text-center">Add Product</h1></Link>
+        <Link to='/'> <h1 className="bg-red-500 p-3 w-40 text-white rounded-2xl text-center">Home Page</h1></Link>
       </div>
        {items.length === 0 ? (
         <p>No items so far.....</p>
@@ -45,7 +46,7 @@ const Products = () => {
               <p>Quantity: {item.count}</p>
               <img src={item.image} alt={item.name} className='w-40 h-30' />
               <div className="flex gap-4 mt-2">
-                <button onClick={() => navigate(`update-product/${item._id}`)} className='bg-blue-500 p-3'>Edit</button>
+                <button onClick={() => navigate(`/update-product/${item._id}`)} className='bg-blue-500 p-3'>Edit</button>
                 <button onClick={() => handleDelete(item._id)} className='bg-red-500 p-3'>Delete</button>
               </div>
             </li>

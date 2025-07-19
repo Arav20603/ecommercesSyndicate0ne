@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import type { CreateCategoryProps } from '../../constants/types'
 import { createCategories } from '../../app/features/category/CreateCategorySlice'
+import { useNavigate } from 'react-router-dom'
 
 const AddCategories = () => {
   const dispatch = useAppDispatch()
   const { isCreating, error } = useAppSelector(state => state.createCategories)
+  const navigate = useNavigate()
 
   const [ formData, setFormData ] = useState<CreateCategoryProps>({
     name: '',
@@ -67,7 +69,8 @@ const AddCategories = () => {
         {/* submit btn */}
         <div className="flex gap-10 ml-10">
           <button type='submit' className='bg-blue-700 text-white p-3 rounded-2xl'>Add Category</button>
-          <button type='button' onClick={handleClear} className='bg-blue-700 text-white p-3 rounded-2xl'>Clear entries</button>
+          <button type='button' onClick={handleClear} className='bg-red-700 text-white p-3 rounded-2xl'>Clear entries</button>
+          <button type='button' onClick={() => navigate('/category')} className='bg-green-700 text-white p-3 rounded-2xl'>&larr;Go back</button>
         </div>
       </form>
     </div>

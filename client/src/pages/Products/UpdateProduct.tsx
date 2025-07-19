@@ -61,26 +61,16 @@ const UpdateProduct = () => {
         category: '',
         count: 0
       })
-      navigate('/')
+      navigate('/product')
     } catch (error) {
       alert('Error updating product')
     }
   }
 
-   const handleClear = () => {
-    setFormData({
-      _id: '',
-      name: '',
-      description: '',
-      image: '',
-      count: 0,
-      category: ''
-    })
-  }
 
 
     if (loading) return <p>Loading.....</p>
-    if (error) return <p>Error updating category..... {error}</p>
+    if (error) return <p>Error updating product..... {error}</p>
 
   return (
     <div>
@@ -128,8 +118,7 @@ const UpdateProduct = () => {
         {/* submit btn */}
         <div className="flex gap-10 ml-10">
           <button type='submit' className='bg-blue-700 text-white p-3 rounded-2xl'>Update Category</button>
-          <button onClick={handleClear} type='button' className='bg-red-500 text-white p-3 rounded-2xl'>Clear entries</button>
-          <button type='button' onClick={() => navigate('/')} className='bg-blue-700 text-white p-3 rounded-2xl'>Cancel</button>
+          <button type='button' onClick={() => navigate('/product')} className='bg-red-700 text-white p-3 rounded-2xl'>Cancel</button>
         </div>
       </form>
     </div>

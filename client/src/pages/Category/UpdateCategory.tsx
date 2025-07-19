@@ -80,7 +80,7 @@ const UpdateCategory = () => {
         {/* submit btn */}
         <div className="flex gap-10 ml-10">
           <button type='submit' className='bg-blue-700 text-white p-3 rounded-2xl'>Update Category</button>
-          <button type='button' onClick={() => navigate('/')} className='bg-blue-700 text-white p-3 rounded-2xl'>Cancel</button>
+          <button type='button' onClick={() => navigate('/category')} className='bg-blue-700 text-white p-3 rounded-2xl'>Cancel</button>
         </div>
       </form>
     </div>

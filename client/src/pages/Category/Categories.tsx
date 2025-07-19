@@ -14,8 +14,10 @@ const Categories: React.FC = () => {
   }, [dispatch])
 
   const handleDelete = (_id: string) => {
-    dispatch(deleteCategories(_id))
-    alert('Category deleted successfully')
+    if (window.confirm("Do u want to delete?") === true) {
+      dispatch(deleteCategories(_id))
+      alert('Category deleted successfully')
+    }
   }
 
   if (loading) return <p>Loading.....</p>
@@ -23,9 +25,11 @@ const Categories: React.FC = () => {
 
   return (
     <div>
-      Category
-
-     <Link to='/add-category'> <h1 className="bg-blue-700 p-2 w-30 text-white float-right">Add Category</h1></Link>
+      <div className="flex justify-between mx-20 my-5">
+        <h1 className="text-4xl">Categories</h1>
+        <Link to='/add-category'> <h1 className="bg-blue-700 p-3 w-40 text-white rounded-2xl text-center">Add Category</h1></Link>
+        <Link to='/'> <h1 className="bg-red-500 p-3 w-40 text-white rounded-2xl text-center">Home Page</h1></Link>
+      </div>
 
       { items.length === 0 ? <p>No categories found</p> : (
       <ul className="grid grid-cols-3">

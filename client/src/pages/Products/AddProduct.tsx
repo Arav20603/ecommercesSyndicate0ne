@@ -94,7 +94,7 @@ const AddProduct = () => {
         <div className="flex gap-10 ml-10">
           <button type='submit' className='bg-blue-700 text-white p-3 rounded-2xl'>Add Category</button>
           <button onClick={handleClear} type='button' className='bg-red-500 text-white p-3 rounded-2xl'>Clear entries</button>
-          <button type='button' onClick={() => navigate('/')} className='bg-green-700 text-white p-3 rounded-2xl'>&larr;Go back</button>
+          <button type='button' onClick={() => navigate('/product')} className='bg-green-700 text-white p-3 rounded-2xl'>&larr;Go back</button>
         </div>
       </form>
     </div>
