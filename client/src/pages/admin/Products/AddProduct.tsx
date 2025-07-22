@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { fetchCategories } from '../../app/features/category/categoriesSlice'
-import { addProduct } from '../../app/features/product/productSlice'
-import type { ProductProps } from '../../constants/types'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
+import { fetchCategories } from '../../../app/features/category/categoriesSlice'
+import { addProduct } from '../../../app/features/product/productSlice'
+import type { ProductProps } from '../../../constants/types'
 import { useNavigate } from 'react-router-dom'
 
 const AddProduct = () => {
@@ -49,6 +49,9 @@ const AddProduct = () => {
       console.log(error)
     }
   }
+
+  if (loading) return <p>Loading.....</p>
+  if (error) return <p>Error in adding Product {error}</p>
 
   return (
     <div>

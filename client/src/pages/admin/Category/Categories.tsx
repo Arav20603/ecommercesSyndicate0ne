@@ -1,6 +1,6 @@
 import { useEffect } from "react"
-import { useAppDispatch, useAppSelector } from "../../app/hooks"
-import { deleteCategories, fetchCategories } from "../../app/features/category/categoriesSlice"
+import { useAppDispatch, useAppSelector } from "../../../app/hooks"
+import { deleteCategories, fetchCategories } from "../../../app/features/category/categoriesSlice"
 import { Link, useNavigate } from "react-router-dom"
 
 const Categories: React.FC = () => {

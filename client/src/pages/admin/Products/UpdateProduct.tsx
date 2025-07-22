@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { useNavigate, useParams } from 'react-router-dom'
-import type { ProductProps } from '../../constants/types'
-import { fetchCategories, updateCategories } from '../../app/features/category/categoriesSlice'
-import { fetchProducts, updateProduct } from '../../app/features/product/productSlice'
+import type { ProductProps } from '../../../constants/types'
+import { fetchCategories, updateCategories } from '../../../app/features/category/categoriesSlice'
+import { fetchProducts, updateProduct } from '../../../app/features/product/productSlice'
 
 
 const UpdateProduct = () => {

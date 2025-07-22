@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
-import UpdateCategory from './pages/Category/UpdateCategory'
-import AddCategories from './pages/Category/AddCategories'
-import AddProduct from './pages/Products/AddProduct'
-import UpdateProduct from './pages/Products/UpdateProduct'
-import Categories from './pages/Category/Categories'
-import Products from './pages/Products/Products'
+import Categories from './pages/admin/Category/Categories'
+import UpdateCategory from './pages/admin/Category/UpdateCategory'
+import AddCategories from './pages/admin/Category/AddCategories'
+import Products from './pages/admin/Products/Products'
+import AddProduct from './pages/admin/Products/AddProduct'
+import UpdateProduct from './pages/admin/Products/UpdateProduct'
 
 const App = () => {
   return (

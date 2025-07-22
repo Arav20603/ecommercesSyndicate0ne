@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { deleteProduct, fetchProducts } from '../../app/features/product/productSlice'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
+import { deleteProduct, fetchProducts } from '../../../app/features/product/productSlice'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Products = () => {

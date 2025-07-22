@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import type { CreateCategoryProps } from '../../constants/types'
-import { createCategories } from '../../app/features/category/CreateCategorySlice'
+import { useAppDispatch, useAppSelector } from '../../../app/hooks'
+import type { CreateCategoryProps } from '../../../constants/types'
+import { createCategories } from '../../../app/features/category/CreateCategorySlice'
 import { useNavigate } from 'react-router-dom'
 
 const AddCategories = () => {
