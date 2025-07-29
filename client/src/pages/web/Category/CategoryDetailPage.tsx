@@ -26,7 +26,8 @@ const CategoryDetailPage = () => {
           <li key={item._id}>
             <p>{item.name}</p>
             <p>{item.description}</p>
-            <p>{item.count}</p>
+            <p>Price: Rs. {item.price}</p>
+            <p>Quantity: {item.count}</p>
             <img src={item.image} />
           </li>
         ))}

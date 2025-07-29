@@ -51,7 +51,7 @@ const Navbar = () => {
               </div>
             )}
           </li>
-          <li><Link to='' className='hover:bg-white px-3 py-1 rounded-3xl'>Products</Link></li>
+          <li><Link to='product-page' className='hover:bg-white px-3 py-1 rounded-3xl'>Products</Link></li>
           <li><Link to='' className='hover:bg-white px-3 py-1 rounded-3xl'>Buy</Link></li>
           <li><Link to='' className='hover:bg-white px-3 py-1 rounded-3xl'>About us</Link></li>
         </ul>
@@ -66,9 +66,10 @@ const Navbar = () => {
 
       {/* right side buttons */}
       <div className="flex gap-5 items-center">
-        <Link to='/'><i className='fa fa-user hover:scale-103' style={{ fontSize: 25 }}></i></Link>
-        <Link to='/'><i className='fa fa-shopping-cart hover:scale-103' style={{ fontSize: 25 }}></i></Link>
-        <Link to='/'><i className='fa fa-heart hover:scale-103' style={{ fontSize: 20 }}></i></Link>
+        <Link to='/'><i className='fa fa-user hover:scale-103 text-blue-700' style={{ fontSize: 25 }}></i></Link>
+        <Link to='/'><i className='fa fa-shopping-cart text-yellow-900' style={{ fontSize: 25 }}>
+          <p className='absolute top-3 right-22 text-lg text-gray-800'>0</p></i></Link>
+        <Link to='/'><i className='fa fa-heart hover:scale-103 text-red-500' style={{ fontSize: 20 }}></i></Link>
       </div>
     </div>
   )

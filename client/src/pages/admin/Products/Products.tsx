@@ -43,6 +43,7 @@ const Products = () => {
               <p>Product Name: {item.name}</p>
               <p>Description: {item.description}</p>
               <p>Category: {item.category}</p>
+              <p>Price: Rs. {item.price}</p>
               <p>Quantity: {item.count}</p>
               <img src={item.image} alt={item.name} className='w-40 h-30' />
               <div className="flex gap-4 mt-2">

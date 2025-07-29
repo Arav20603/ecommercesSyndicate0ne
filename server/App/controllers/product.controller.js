@@ -18,6 +18,7 @@ export const addProduct = async (req, res) => {
     let enquiry = new productModel({
       name,
       description,
+      price,
       image,
       category,
       count
@@ -83,12 +84,12 @@ export const deleteProduct = async (req, res) => {
 export const updateProduct = async (req, res) => {
   try {
     let id = req.params.id
-    let { name, description, image, count, category } = req.body
+    let { name, description, price, image, count, category } = req.body
     name = name?.toLowerCase()
     category = category?.toLowerCase()
     description = description?.toLowerCase()
     const updateObj = {
-      id, name, description, image, count, category
+      id, name, description, price, image, count, category
     }
     let enquiry = await productModel.updateOne({_id: id}, updateObj)
     if (!enquiry) res.status(500).json({success: false,msg: "Error updating product"})

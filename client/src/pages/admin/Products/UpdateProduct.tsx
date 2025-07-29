@@ -17,6 +17,7 @@ const UpdateProduct = () => {
     _id: '',
     name: '',
     description: '',
+    price: 0,
     image: '',
     count: 0,
     category: ''
@@ -39,6 +40,7 @@ const UpdateProduct = () => {
           _id: data._id || '',
           name: data.name || '',
           description: data.description || '',
+          price: data.price,
           count: data.count,
           image: data.image,
           category: data.category,
@@ -57,6 +59,7 @@ const UpdateProduct = () => {
         _id: '',
         name: '',
         description: '',
+        price: 0,
         image: '',
         category: '',
         count: 0
@@ -89,6 +92,13 @@ const UpdateProduct = () => {
         <textarea name='description' placeholder='Enter description if needed' className='border-1 w-2/7 p-3 ml-5'
           value={formData.description}
           onChange={(e) => setFormData({...formData, description: e.target.value})}
+        />
+
+        {/* Price field */}
+        <label>Price: </label>
+        <input type='number' name='price' placeholder='Enter price of the product' className='border-1 w-2/7 p-3 ml-5'
+          value={formData.price}
+          onChange={(e) => setFormData({...formData, price: Number(e.target.value)})}
         />
 
         {/* category field */}

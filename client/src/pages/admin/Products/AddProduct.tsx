@@ -12,6 +12,7 @@ const AddProduct = () => {
   const [name, setName] = useState('')
   const [description, setDesc] = useState('')
   const [category, setCategory] = useState('')
+  const [price, setPrice] = useState(0)
   const [image, setImage] = useState('')
   const [count, setCount] = useState(0)
   const navigate = useNavigate()
@@ -26,22 +27,24 @@ const AddProduct = () => {
     setCategory('')
     setCount(0)
     setDesc('')
+    setPrice(0)
     setImage('')
   }
 
   const handleSubmit = (e: any) => {
     e.preventDefault()
-    if (!name || !category || !image || !count || !description) return alert("Pls fill name category field")
+    if (!name || !category || !image || !count || !description || !price) return alert("Pls fill name category field")
 
     try {
       const formData: ProductProps = {
-        name, description, image, count, category,
+        name, description, image, count, category,price,
         _id: ''
       }
       dispatch(addProduct(formData))
       alert("Product added successfully")
       setName('')
       setCategory('')
+      setPrice(0)
       setCount(0)
       setDesc('')
       setImage('')
@@ -56,7 +59,7 @@ const AddProduct = () => {
   return (
     <div>
       
-      <form onSubmit={handleSubmit} className='flex flex-col p-4 gap-5 ml-10 border-1 w-150 h-180'>
+      <form onSubmit={handleSubmit} className='flex flex-col p-4 gap-5 ml-10 border-1 w-150'>
         <h1>Add a Product</h1>
 
         {/* name field*/}
@@ -67,8 +70,14 @@ const AddProduct = () => {
 
         {/* description field */}
         <label>Description: </label>
-        <textarea name='description' placeholder='Enter description if needed' className='border-1 w-100 p-3 ml-5'
+        <textarea name='description' placeholder='Enter description if needed' rows={2} className='border-1 w-100 p-3 ml-5'
           value={description} onChange={(e) => setDesc(e.target.value)}
+        />
+
+        {/* Price field */}
+        <label>Price: </label>
+        <input type='number' name='price' placeholder='Enter price of the product' className='border-1 w-100 p-3 ml-5'
+          value={price} onChange={(e) => setPrice(Number(e.target.value))}
         />
 
         {/* category field */}

@@ -28,6 +28,7 @@ export interface ProductProps {
   _id: string,
   name: string,
   description: string,
+  price: number,
   image: string,
   category: string,
   count: number
