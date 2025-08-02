@@ -14,12 +14,18 @@ const ProductDetailPage = () => {
   const product = productItems.find(item => item._id === _id)
 
   return (
-    <div>
-      <p>{product?.name.toUpperCase()}</p>
+    <div className='m-4'>
+      <p className='underline text-2xl font-bold'>{product?.name.toUpperCase()}</p>
       <img src={product?.image} alt={product?.name} />
       <p>{product?.description}</p>
       <p>Price: Rs.{product?.price}</p>
       <p>Quantity: {product?.count}</p>
+
+      {/* shop buttons */}
+      <div className="flex gap-4">
+        <button className='bg-yellow-500 p-2 rounded-2xl'>Add to cart</button>
+        <button className='bg-red-300 p-2 rounded-2xl'>Buy now</button>
+      </div>
     </div>
   )
 }
