@@ -7,6 +7,7 @@ import Products from './pages/admin/Products/Products'
 import AddProduct from './pages/admin/Products/AddProduct'
 import UpdateProduct from './pages/admin/Products/UpdateProduct'
 import CategoryDetailPage from './pages/web/Category/CategoryDetailPage'
+import ProductDetailPage from './pages/web/Products/ProductDetailPage'
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
         <Route path='/add-product' element={<AddProduct />} />
         <Route path='/update-product/:_id' element={<UpdateProduct />} />
         <Route path='/category-detail/:_id' element={<CategoryDetailPage />} />
-        <Route path='/product-detail/:_id' element={<CategoryDetailPage />} />
+        <Route path='/product-detail/:_id' element={<ProductDetailPage />} />
       </Routes>
     </BrowserRouter>
   )

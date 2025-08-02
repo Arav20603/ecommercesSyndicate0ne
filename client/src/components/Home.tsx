@@ -48,7 +48,7 @@ const Home = () => {
             <div className="p-2 gap-4">
               <p className='mb-3'>{item.name}</p>
               <button className='bg-orange-500 p-2 rounded-2xl'>Add to cart</button>
-              <Link to={`product-detail/8`} className='bg-yellow-400 p-2 rounded-2xl'>View Detail</Link>
+              <Link to={`product-detail/${item._id}`} className='bg-yellow-400 p-2 rounded-2xl'>View Detail</Link>
             </div>
           </li>
         )) }
