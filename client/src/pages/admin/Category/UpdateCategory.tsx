@@ -45,7 +45,7 @@ const UpdateCategory = () => {
         image: '',
         category: ''
       })
-      navigate('/')
+      navigate('/home')
     }
 
     if (loading) return <p>Loading.....</p>

@@ -32,7 +32,7 @@ const Products = () => {
       <div className="flex justify-between mx-20 my-5">
         <h1 className="text-4xl">Products</h1>
         <Link to='/add-product'> <h1 className="bg-blue-700 p-3 w-40 text-white rounded-2xl text-center">Add Product</h1></Link>
-        <Link to='/'> <h1 className="bg-red-500 p-3 w-40 text-white rounded-2xl text-center">Home Page</h1></Link>
+        <Link to='/home'> <h1 className="bg-red-500 p-3 w-40 text-white rounded-2xl text-center">Home Page</h1></Link>
       </div>
        {items.length === 0 ? (
         <p>No items so far.....</p>

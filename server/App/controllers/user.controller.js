@@ -34,19 +34,19 @@ export const signUp = async (req, res) => {
 
 }
 
-export const login = async (req, res) => {
+export const logIn = async (req, res) => {
   const {email, password} = req.body
   try {
     const user = await userModel.findOne({email})
     if (!user) {
-      return res.status(400).json({success: false, msg: "User does not exist"})
+      return res.status(500).json({success: false, msg: "User does not exist", err: error})
     }
     const isPassword = await bcrypt.compare(password, user.password)
     if (!isPassword) {
-      return res.status(400).json({success: false, msg: "Invalid password"})
+      return res.status(500).json({success: false, msg: "Invalid password", err: error})
     }
 
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       msg: "User logged in succesfully",
       user: {

@@ -8,12 +8,14 @@ import AddProduct from './pages/admin/Products/AddProduct'
 import UpdateProduct from './pages/admin/Products/UpdateProduct'
 import CategoryDetailPage from './pages/web/Category/CategoryDetailPage'
 import ProductDetailPage from './pages/web/Products/ProductDetailPage'
+import Login from './pages/web/user/Login'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/category' element={<Categories />} />
         <Route path='/category-edit/:id' element={<UpdateCategory />} />
         <Route path='/add-category' element={<AddCategories />} />
