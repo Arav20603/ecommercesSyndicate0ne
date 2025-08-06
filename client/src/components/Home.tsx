@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Navbar from './Navbar'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { useDispatch } from 'react-redux'
@@ -10,8 +10,10 @@ const Home = () => {
   const dispatch = useAppDispatch()
   const { items: categoryItems, loading, error } = useAppSelector(state => state.categories)
   const { items: productItems } = useAppSelector(state => state.products)
+  const navigate = useNavigate()
 
   useEffect(() => {
+    if (localStorage.getItem('user') == null) navigate('/login')
     dispatch(fetchCategories())
     dispatch(fetchProducts())
   }, [dispatch])

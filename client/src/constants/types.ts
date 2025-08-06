@@ -40,6 +40,13 @@ export interface UserProps {
   phoneNo: number
 }
 
+export interface UserCreateProps {
+  name: string,
+  email: string,
+  phoneNo: number,
+  password: string
+}
+
 export interface UserStateProps {
   items: UserProps | null,
   loading: boolean,

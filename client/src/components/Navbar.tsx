@@ -1,13 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../app/hooks'
 import { fetchCategories } from '../app/features/category/categoriesSlice'
+import { logOut } from '../app/features/user/userSlice'
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false)
   const [query, setQuery] = useState('')
   const dispatch = useAppDispatch()
   const {items: categoryItems, loading, error} = useAppSelector(state => state.categories)
+  const navigate = useNavigate()
 
   const dropdownRef = useRef<HTMLLIElement>(null)
   useEffect(() => {
@@ -30,6 +32,18 @@ const Navbar = () => {
   const handleCategoryClick = () => {
     setShowDropdown(prev => !prev)
   }
+
+  const handleLogout = () => {
+    try {
+      dispatch(logOut())
+      alert('Successfully logged out')
+      navigate('/login')
+    } catch (error) {
+      alert(`Error in logging out: ${error}`)
+      console.log(error)
+    }
+  }
+
   return (
     <div className='flex justify-around items-center mt-4'>
       {/* title */}
@@ -68,8 +82,9 @@ const Navbar = () => {
       <div className="flex gap-5 items-center">
         <Link to='/'><i className='fa fa-user hover:scale-103 text-blue-700' style={{ fontSize: 25 }}></i></Link>
         <Link to='/'><i className='fa fa-shopping-cart text-yellow-900' style={{ fontSize: 25 }}>
-          <p className='absolute top-3 right-22 text-lg text-gray-800'>0</p></i></Link>
+          <p className='absolute top-3 right-22 text-lg text-gray-800'></p></i></Link>
         <Link to='/'><i className='fa fa-heart hover:scale-103 text-red-500' style={{ fontSize: 20 }}></i></Link>
+        <button onClick={handleLogout} className='bg-red-500 p-2 text-white cursor-pointer rounded-2xl'>logout</button>
       </div>
     </div>
   )

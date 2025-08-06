@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../../app/hooks'
 import { fetchUser } from '../../../app/features/user/userSlice'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const dispatch = useAppDispatch()
@@ -13,11 +13,11 @@ const Login = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (userData) {
+    if (userData && localStorage.getItem('user') == null) {
       localStorage.setItem('user', JSON.stringify(userData))
       console.log(userData)
       alert(`Successfully logged in.\nWelcome, ${userData.name}!`)
-      navigate('/home')
+      navigate('/')
     }
   }, [userData, navigate])
   
@@ -61,6 +61,7 @@ const Login = () => {
 
         {/* btn */}
         <button type='submit' className='bg-blue-500 p-2 w-30 ml-20 rounded-2xl'>Submit</button>
+        <p>Don't have an account? <Link to='/signup' className='text-blue-600 underline'>SignUp</Link></p>
      </form>
     </div>
   )

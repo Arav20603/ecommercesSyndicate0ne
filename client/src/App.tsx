@@ -9,13 +9,15 @@ import UpdateProduct from './pages/admin/Products/UpdateProduct'
 import CategoryDetailPage from './pages/web/Category/CategoryDetailPage'
 import ProductDetailPage from './pages/web/Products/ProductDetailPage'
 import Login from './pages/web/user/Login'
+import SignUp from './pages/web/user/Signup'
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/home' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/' element={<Home />} />
         <Route path='/category' element={<Categories />} />
         <Route path='/category-edit/:id' element={<UpdateCategory />} />
         <Route path='/add-category' element={<AddCategories />} />
