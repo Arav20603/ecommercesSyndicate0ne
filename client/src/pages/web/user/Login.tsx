@@ -26,7 +26,7 @@ const Login = () => {
       alert(`Invalid Credentials`)
       setForm({...form, password: ''})
     }
-  }, [error])
+  }, [error,dispatch])
 
   const handleSubmit = (e: any) => {``
     e.preventDefault()

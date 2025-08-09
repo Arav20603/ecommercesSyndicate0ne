@@ -10,6 +10,7 @@ import CategoryDetailPage from './pages/web/Category/CategoryDetailPage'
 import ProductDetailPage from './pages/web/Products/ProductDetailPage'
 import Login from './pages/web/user/Login'
 import SignUp from './pages/web/user/Signup'
+import Profile from './pages/web/user/Profile'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/update-product/:_id' element={<UpdateProduct />} />
         <Route path='/category-detail/:_id' element={<CategoryDetailPage />} />
         <Route path='/product-detail/:_id' element={<ProductDetailPage />} />
+        <Route path='/profile' element={<Profile />} />
       </Routes>
     </BrowserRouter>
   )

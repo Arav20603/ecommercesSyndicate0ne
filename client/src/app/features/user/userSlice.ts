@@ -50,10 +50,12 @@ const userSlice = createSlice({
     builder
     .addCase(fetchUser.pending, (state) => {
       state.loading = true
+      state.error = null
     })
     .addCase(fetchUser.fulfilled, (state, action) => {
       state.loading = false
       state.items = action.payload
+      state.error = null
     })
     .addCase(fetchUser.rejected, (state, action) => {
       state.loading = false

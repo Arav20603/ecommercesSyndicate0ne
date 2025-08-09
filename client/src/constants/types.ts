@@ -52,3 +52,10 @@ export interface UserStateProps {
   loading: boolean,
   error: null | any;
 }
+
+export interface ProfileProps {
+  id: string,
+  name: string,
+  email: string,
+  phoneNo: number
+}

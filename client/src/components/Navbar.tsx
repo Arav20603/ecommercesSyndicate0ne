@@ -80,7 +80,7 @@ const Navbar = () => {
 
       {/* right side buttons */}
       <div className="flex gap-5 items-center">
-        <Link to='/'><i className='fa fa-user hover:scale-103 text-blue-700' style={{ fontSize: 25 }}></i></Link>
+        <Link to='/profile'><i className='fa fa-user hover:scale-103 text-blue-700' style={{ fontSize: 25 }}></i></Link>
         <Link to='/'><i className='fa fa-shopping-cart text-yellow-900' style={{ fontSize: 25 }}>
           <p className='absolute top-3 right-22 text-lg text-gray-800'></p></i></Link>
         <Link to='/'><i className='fa fa-heart hover:scale-103 text-red-500' style={{ fontSize: 20 }}></i></Link>
